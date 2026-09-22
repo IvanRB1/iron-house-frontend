@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios — Iron House Gym</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="recursos/style.css">
+</head>
+
+<body>
+  <div class="page-wrap">
+
+    <nav class="pure-menu pure-menu-horizontal gym-nav">
+      <a href="index.html" class="pure-menu-heading">IRON <span>HOUSE</span></a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">Inicio</a></li>
+        <li class="pure-menu-item pure-menu-selected"><a href="servicios.html" class="pure-menu-link">Servicios</a></li>
+        <li class="pure-menu-item"><a href="contacto.html" class="pure-menu-link">Contacto</a></li>
+        <li class="pure-menu-item"><a href="cuenta.html" class="pure-menu-link">Mi cuenta</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="content">
+
+      <header class="hero section-tight">
+        <div class="container">
+          <p class="eyebrow">Lo que ofrecemos</p>
+          <h1 style="font-size:2.4rem;">Servicios y membresías</h1>
+          <p class="lede">Elige el plan que se ajuste a tu ritmo, consulta los horarios de clase y reserva tu cupo en
+            segundos.</p>
+        </div>
+      </header>
+
+
+
+
+
+      <!--GESTIÓN DE MEMBRESÍAS-->
+      <section class="section" id="membresias">
+        <div class="container">
+          <p class="eyebrow">Gestión de membresías</p>
+          <h2 class="u-mb-2">Elige tu plan</h2>
+          <div class="pure-g">
+            <div class="pure-u-1 pure-u-md-1-3 u-p-1">
+              <div class="plan-card">
+                <h3 class="u-mt-0">Básico</h3>
+                <div class="plan-price">$79.900<small>/mes</small></div>
+                <p class="u-text-left">Acceso a sala de máquinas y pesas libres en horario diurno. Sin clases grupales.
+                </p>
+                <a href="cuenta.html#registro" class="pure-button pure-button-outline pure-input-1">Elegir plan</a>
+              </div>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-3 u-p-1">
+              <div class="plan-card is-featured">
+                <h3 class="u-mt-0">Fit Pro</h3>
+                <div class="plan-price">$129.900<small>/mes</small></div>
+                <p class="u-text-left">Acceso ilimitado 24/7 + 8 clases grupales al mes + 1 evaluación física.</p>
+                <a href="cuenta.html#registro" class="pure-button pure-button-signal pure-input-1">Elegir plan</a>
+              </div>
+            </div>
+            <div class="pure-u-1 pure-u-md-1-3 u-p-1">
+              <div class="plan-card">
+                <h3 class="u-mt-0">Elite</h3>
+                <div class="plan-price">$189.900<small>/mes</small></div>
+                <p class="u-text-left">Todo Fit Pro + clases ilimitadas + 2 sesiones de entrenamiento personal al mes.
+                </p>
+                <a href="cuenta.html#registro" class="pure-button pure-button-outline pure-input-1">Elegir plan</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      <!--CONSULTA DE HORARIOS-->
+      <section class="section-alt section" id="horarios">
+        <div class="container">
+          <p class="eyebrow">Consulta de horarios</p>
+          <h2 class="u-mb-2">Horario semanal de clases</h2>
+          <table class="pure-table pure-table-horizontal" style="width:100%; background:#fff;">
+            <thead>
+              <tr>
+                <th>Clase</th>
+                <th>Entrenador</th>
+                <th class="u-hide-sm">Día</th>
+                <th>Hora</th>
+                <th>Cupos</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Full Body Power</td>
+                <td>María José Ríos</td>
+                <td class="u-hide-sm">Lun / Mié / Vie</td>
+                <td>6:00 a.m.</td>
+                <td><span class="badge badge-ok">8 disponibles</span></td>
+                <td><button class="pure-button pure-button-signal" data-confirm data-confirm-title="Confirmar reserva"
+                    data-confirm-body="¿Deseas reservar tu cupo en Full Body Power, lunes/miércoles/viernes 6:00 a.m.?"
+                    data-confirm-action="Reservar" data-remove-row>Reservar</button></td>
+              </tr>
+              <tr>
+                <td>Quema 30 (HIIT)</td>
+                <td>Daniel Cárdenas</td>
+                <td class="u-hide-sm">Mar / Jue</td>
+                <td>7:00 p.m.</td>
+                <td><span class="badge badge-warn">2 disponibles</span></td>
+                <td><button class="pure-button pure-button-signal" data-confirm data-confirm-title="Confirmar reserva"
+                    data-confirm-body="¿Deseas reservar tu cupo en Quema 30, martes/jueves 7:00 p.m.?"
+                    data-confirm-action="Reservar" data-remove-row>Reservar</button></td>
+              </tr>
+              <tr>
+                <td>Flex &amp; Recovery</td>
+                <td>Laura Toro</td>
+                <td class="u-hide-sm">Sáb</td>
+                <td>9:00 a.m.</td>
+                <td><span class="badge badge-off">Cupo lleno</span></td>
+                <td><button class="pure-button pure-button-outline" disabled>Sin cupo</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="u-muted u-mt-1">Puedes cancelar una reserva desde <a href="cuenta.html#historial">Mi cuenta →
+              Historial de actividades</a>.</p>
+        </div>
+      </section>
+
+
+
+
+      <!--Botones y estilos (referencia)-->
+      <section class="section" id="botones">
+        <div class="container">
+          <p class="eyebrow">Componentes</p>
+          <h2 class="u-mb-2">Botones y estilos</h2>
+          <div class="u-flex u-flex-wrap u-gap-1 u-items-center">
+            <button class="pure-button pure-button-signal">Primario</button>
+            <button class="pure-button pure-button-outline">Secundario</button>
+            <button class="pure-button pure-button-danger">Cancelar</button>
+            <button class="pure-button" disabled>Deshabilitado</button>
+            <button class="pure-button pure-button-signal pure-button-xlarge">Extra grande</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <footer class="gym-footer">
+      <div class="container pure-g">
+        <div class="pure-u-1 pure-u-md-1-3">
+          <h3 style="color:#fff;">IRON HOUSE</h3>
+          <p style="color:var(--bone-200);">Calle 100 # 15-20, Bogotá.</p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
+          <h4 style="color:#fff;">Enlaces</h4>
+          <p><a href="index.html">Inicio</a><br><a href="contacto.html">Contacto</a><br><a href="cuenta.html">Mi
+              cuenta</a></p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
+          <h4 style="color:#fff;">Síguenos</h4>
+          <p><a href="#">Instagram</a><br><a href="#">Facebook</a></p>
+        </div>
+      </div>
+      <p class="fine">© 2026 Iron House Gym — Proyecto académico construido con Pure.css</p>
+    </footer>
+  </div>
+
+
+
+
+
+  <!--MODAL DE CONFIRMACIÓN (compartido)-->
+  <div class="modal-backdrop" id="confirm-modal">
+    <div class="modal-box">
+      <h3 data-modal-title>Confirmar acción</h3>
+      <p data-modal-body>¿Deseas continuar?</p>
+      <div class="modal-actions">
+        <button class="pure-button" data-modal-close>Volver</button>
+        <button class="pure-button pure-button-signal" data-modal-confirm>Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="recursos/script.js"></script>
+</body>
+
+</html>

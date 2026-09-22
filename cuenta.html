@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi cuenta — Iron House Gym</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="recursos/style.css">
+</head>
+
+<body>
+
+  <div class="page-wrap">
+
+    <nav class="pure-menu pure-menu-horizontal gym-nav">
+      <a href="index.html" class="pure-menu-heading">IRON <span>HOUSE</span></a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">Inicio</a></li>
+        <li class="pure-menu-item"><a href="servicios.html" class="pure-menu-link">Servicios</a></li>
+        <li class="pure-menu-item"><a href="contacto.html" class="pure-menu-link">Contacto</a></li>
+        <li class="pure-menu-item pure-menu-selected"><a href="cuenta.html" class="pure-menu-link">Mi cuenta</a></li>
+      </ul>
+    </nav>
+
+
+
+
+    <div class="content">
+
+      <!--VISTA: NO AUTENTICADO — LOGIN / REGISTRO (tabs)-->
+      <div id="view-logged-out">
+        <header class="hero section-tight">
+          <div class="container">
+            <p class="eyebrow">Área de socios</p>
+            <h1 style="font-size:2.4rem;">Inicia sesión o regístrate</h1>
+            <p class="lede">Gestiona tu membresía, tus reservas y tu progreso desde un solo lugar.</p>
+          </div>
+        </header>
+
+        <section class="section">
+          <div class="container pure-u-1 pure-u-md-7-12" style="margin:0 auto;">
+            <div class="form-card" data-tabs>
+              <div class="tabs-nav">
+                <button class="is-active" data-tab-target="tab-login" id="tab-login-btn">Iniciar sesión</button>
+                <button data-tab-target="tab-registro" id="registro">Registro de socio</button>
+              </div>
+
+
+
+              <!-- LOGIN -->
+              <div class="tab-panel is-active" id="tab-login">
+                <form class="pure-form pure-form-stacked" id="login-form" data-validate novalidate>
+                  <label for="login-email">Correo electrónico</label>
+                  <input id="login-email" type="email" class="pure-input-1" placeholder="socio@correo.com" required>
+                  <span class="form-error">Ingresa un correo válido.</span>
+
+                  <label for="login-pass">Contraseña</label>
+                  <input id="login-pass" type="password" class="pure-input-1" placeholder="••••••••" required
+                    minlength="6">
+                  <span class="form-error">La contraseña debe tener al menos 6 caracteres.</span>
+
+                  <label class="pure-checkbox"><input type="checkbox"> Recordarme</label>
+                  <button type="submit" class="pure-button pure-button-signal pure-input-1 u-mt-2">Ingresar</button>
+                  <p class="form-hint u-text-center u-mt-1">Demo: cualquier correo/contraseña válidos te dan acceso al
+                    panel.</p>
+                </form>
+              </div>
+
+
+
+
+              <!-- REGISTRO -->
+              <div class="tab-panel" id="tab-registro">
+                <form class="pure-form pure-form-stacked" data-validate novalidate>
+                  <div class="pure-g">
+                    <div class="pure-u-1 pure-u-sm-1-2" style="padding-right:0.5rem;">
+                      <label for="reg-nombre">Nombre completo</label>
+                      <input id="reg-nombre" type="text" class="pure-input-1" required minlength="3">
+                      <span class="form-error">Ingresa tu nombre completo.</span>
+                    </div>
+                    <div class="pure-u-1 pure-u-sm-1-2" style="padding-left:0.5rem;">
+                      <label for="reg-doc">Documento de identidad</label>
+                      <input id="reg-doc" type="text" class="pure-input-1" required pattern="[0-9]{6,12}">
+                      <span class="form-error">Ingresa un número de documento válido.</span>
+                    </div>
+                  </div>
+                  <label for="reg-email">Correo electrónico</label>
+                  <input id="reg-email" type="email" class="pure-input-1" required>
+                  <span class="form-error">Ingresa un correo válido.</span>
+
+                  <label for="reg-plan">Plan de interés</label>
+                  <select id="reg-plan" class="pure-input-1" required>
+                    <option value="">Selecciona un plan…</option>
+                    <option>Básico</option>
+                    <option>Fit Pro</option>
+                    <option>Elite</option>
+                  </select>
+
+                  <label for="reg-pass">Contraseña</label>
+                  <input id="reg-pass" type="password" class="pure-input-1" required minlength="6">
+                  <span class="form-error">Mínimo 6 caracteres.</span>
+
+                  <button type="submit" class="pure-button pure-button-signal pure-input-1 u-mt-2">Crear cuenta</button>
+                  <p data-form-success style="display:none; color: var(--ok-500); margin-top:1rem;">¡Registro exitoso!
+                    Ya puedes iniciar sesión.</p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+
+
+      <!-- VISTA: AUTENTICADO — PANEL DE SOCIO (tabs)-->
+      <div id="view-logged-in" style="display:none;">
+
+        <header class="section-dark section-tight">
+          <div class="container u-flex u-justify-between u-items-center u-flex-wrap u-gap-1">
+            <div>
+              <p class="eyebrow u-mb-0">Panel de socio</p>
+              <h1 style="font-size:1.8rem; margin:0;">Hola, Ana Martínez</h1>
+            </div>
+            <div class="u-flex u-items-center u-gap-2">
+              <div class="notif-wrap">
+                <button class="pure-button pure-button-ghost" data-notif-toggle>Notificaciones<span
+                    class="notif-dot"></span></button>
+                <div class="notif-panel" data-notif-panel>
+                  <div class="item"><strong>Recordatorio de clase</strong>Full Body Power mañana 6:00 a.m.</div>
+                  <div class="item"><strong>Pago próximo</strong>Tu membresía Fit Pro vence en 3 días.</div>
+                  <div class="item"><strong>Nueva reseña</strong>Calificaste a Daniel Cárdenas con 4★.</div>
+                </div>
+              </div>
+              <button class="pure-button pure-button-danger" id="logout-btn">Cerrar sesión</button>
+            </div>
+          </div>
+        </header>
+
+        <section class="section" data-tabs>
+          <div class="container">
+            <div class="tabs-nav">
+              <button class="is-active" data-tab-target="tab-perfil">Mi perfil</button>
+              <button data-tab-target="tab-historial">Historial</button>
+              <button data-tab-target="tab-pagos">Pagos</button>
+              <button data-tab-target="tab-calificar">Calificar</button>
+              <button data-tab-target="tab-admin">Administración</button>
+            </div>
+
+
+            <!-- ACTUALIZACIÓN DE PERFIL -->
+            <div class="tab-panel is-active" id="tab-perfil">
+              <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-7-12 u-p-1">
+                  <div class="form-card">
+                    <form class="pure-form pure-form-stacked" data-validate novalidate>
+                      <legend>Actualizar perfil</legend>
+                      <label for="p-nombre">Nombre completo</label>
+                      <input id="p-nombre" type="text" class="pure-input-1" value="Ana Martínez" required>
+                      <span class="form-error">Este campo es obligatorio.</span>
+
+                      <label for="p-email">Correo electrónico</label>
+                      <input id="p-email" type="email" class="pure-input-1" value="ana.martinez@correo.com" required>
+                      <span class="form-error">Ingresa un correo válido.</span>
+
+                      <label for="p-tel">Teléfono</label>
+                      <input id="p-tel" type="tel" class="pure-input-1" value="3011234567" pattern="[0-9]{7,10}"
+                        required>
+                      <span class="form-error">Teléfono inválido.</span>
+
+                      <label for="p-plan">Membresía activa</label>
+                      <select id="p-plan" class="pure-input-1">
+                        <option>Fit Pro</option>
+                        <option>Básico</option>
+                        <option>Elite</option>
+                      </select>
+
+                      <button type="submit" class="pure-button pure-button-signal u-mt-2">Guardar cambios</button>
+                      <p data-form-success style="display:none; color: var(--ok-500); margin-top:1rem;">Perfil
+                        actualizado correctamente.</p>
+                    </form>
+                  </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-5-12 u-p-1">
+                  <div class="form-card">
+                    <h3 class="u-mt-0">Gestión de membresía</h3>
+                    <p><span class="badge badge-ok">Activa</span> Plan Fit Pro</p>
+                    <p class="u-muted">Próximo cobro: 12 de octubre de 2026</p>
+                    <button class="pure-button pure-button-outline pure-input-1" data-confirm
+                      data-confirm-title="Cambiar de plan"
+                      data-confirm-body="¿Deseas iniciar el proceso para cambiar tu plan de membresía?"
+                      data-confirm-action="Continuar">Cambiar de plan</button>
+                    <button class="pure-button pure-button-danger pure-input-1 u-mt-1" data-confirm
+                      data-confirm-title="Cancelar membresía"
+                      data-confirm-body="Esta acción cancelará tu membresía al final del periodo actual. ¿Deseas continuar?"
+                      data-confirm-action="Sí, cancelar">Cancelar membresía</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- HISTORIAL DE ACTIVIDADES / RESERVAS (accordion) -->
+            <div class="tab-panel" id="tab-historial">
+              <h3 class="u-mt-0">Historial de actividades y reservas</h3>
+
+              <div class="accordion-item is-open">
+                <button class="accordion-trigger">Reservas próximas <span class="chev">▾</span></button>
+                <div class="accordion-body">
+                  <table class="pure-table pure-table-horizontal" style="width:100%;">
+                    <tbody>
+                      <tr>
+                        <td>Full Body Power — Lun 6:00 a.m.</td>
+                        <td><span class="badge badge-ok">Confirmada</span></td>
+                        <td><button class="pure-button pure-button-danger" data-confirm
+                            data-confirm-title="Cancelar clase"
+                            data-confirm-body="¿Deseas cancelar tu reserva de Full Body Power (lunes 6:00 a.m.)?"
+                            data-confirm-action="Sí, cancelar" data-remove-row>Cancelar</button></td>
+                      </tr>
+                      <tr>
+                        <td>Quema 30 — Jue 7:00 p.m.</td>
+                        <td><span class="badge badge-ok">Confirmada</span></td>
+                        <td><button class="pure-button pure-button-danger" data-confirm
+                            data-confirm-title="Cancelar clase"
+                            data-confirm-body="¿Deseas cancelar tu reserva de Quema 30 (jueves 7:00 p.m.)?"
+                            data-confirm-action="Sí, cancelar" data-remove-row>Cancelar</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button class="accordion-trigger">Actividades completadas <span class="chev">▾</span></button>
+                <div class="accordion-body">
+                  <table class="pure-table pure-table-horizontal" style="width:100%;">
+                    <tbody>
+                      <tr>
+                        <td>Flex &amp; Recovery</td>
+                        <td>28 ago 2026</td>
+                        <td><span class="badge badge-ok">Asistió</span></td>
+                      </tr>
+                      <tr>
+                        <td>Full Body Power</td>
+                        <td>26 ago 2026</td>
+                        <td><span class="badge badge-ok">Asistió</span></td>
+                      </tr>
+                      <tr>
+                        <td>Quema 30</td>
+                        <td>21 ago 2026</td>
+                        <td><span class="badge badge-off">No asistió</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- GESTIÓN DE PAGOS -->
+            <div class="tab-panel" id="tab-pagos">
+              <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2 u-p-1">
+                  <div class="form-card">
+                    <h3 class="u-mt-0">Historial de pagos</h3>
+                    <table class="pure-table pure-table-horizontal" style="width:100%;">
+                      <thead>
+                        <tr>
+                          <th>Fecha</th>
+                          <th>Concepto</th>
+                          <th>Valor</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>12/09/2026</td>
+                          <td>Membresía Fit Pro</td>
+                          <td>$129.900</td>
+                        </tr>
+                        <tr>
+                          <td>12/08/2026</td>
+                          <td>Membresía Fit Pro</td>
+                          <td>$129.900</td>
+                        </tr>
+                        <tr>
+                          <td>12/07/2026</td>
+                          <td>Membresía Fit Pro</td>
+                          <td>$129.900</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2 u-p-1">
+                  <div class="form-card">
+                    <form class="pure-form pure-form-stacked" data-validate novalidate>
+                      <legend>Registrar método de pago</legend>
+                      <label for="tarjeta">Número de tarjeta</label>
+                      <input id="tarjeta" type="text" class="pure-input-1" placeholder="•••• •••• •••• ••••" required
+                        pattern="[0-9\s]{13,19}">
+                      <span class="form-error">Ingresa un número de tarjeta válido.</span>
+                      <div class="pure-g">
+                        <div class="pure-u-1-2" style="padding-right:0.5rem;">
+                          <label for="venc">Vencimiento</label>
+                          <input id="venc" type="text" class="pure-input-1" placeholder="MM/AA" required
+                            pattern="(0[1-9]|1[0-2])\/[0-9]{2}">
+                        </div>
+                        <div class="pure-u-1-2" style="padding-left:0.5rem;">
+                          <label for="cvv">CVV</label>
+                          <input id="cvv" type="text" class="pure-input-1" placeholder="123" required
+                            pattern="[0-9]{3,4}">
+                        </div>
+                      </div>
+                      <button type="submit" class="pure-button pure-button-signal u-mt-2">Guardar método de
+                        pago</button>
+                      <p data-form-success style="display:none; color: var(--ok-500); margin-top:1rem;">Método de pago
+                        guardado.</p>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <!-- CALIFICACIÓN DE ENTRENADORES -->
+            <div class="tab-panel" id="tab-calificar">
+              <div class="form-card" style="max-width:520px;">
+                <h3 class="u-mt-0">Califica a tu entrenador</h3>
+                <label for="ent-select">Entrenador</label>
+                <select id="ent-select" class="pure-input-1 u-mb-2">
+                  <option>Daniel Cárdenas — HIIT &amp; Funcional</option>
+                  <option>María José Ríos — Fuerza</option>
+                  <option>Laura Toro — Movilidad</option>
+                </select>
+                <p class="u-mb-0">Tu calificación:</p>
+                <div data-rating class="u-mb-2" style="font-size:1.8rem;">
+                  <button type="button"
+                    style="background:none;border:none;cursor:pointer;color:var(--warn-500);">☆</button>
+                  <button type="button"
+                    style="background:none;border:none;cursor:pointer;color:var(--warn-500);">☆</button>
+                  <button type="button"
+                    style="background:none;border:none;cursor:pointer;color:var(--warn-500);">☆</button>
+                  <button type="button"
+                    style="background:none;border:none;cursor:pointer;color:var(--warn-500);">☆</button>
+                  <button type="button"
+                    style="background:none;border:none;cursor:pointer;color:var(--warn-500);">☆</button>
+                </div>
+                <textarea class="pure-input-1" rows="3" placeholder="Cuéntanos tu experiencia (opcional)"></textarea>
+                <button class="pure-button pure-button-signal u-mt-2">Enviar calificación</button>
+              </div>
+            </div>
+
+
+
+            <!-- ADMINISTRACIÓN: USUARIOS + REPORTES -->
+            <div class="tab-panel" id="tab-admin">
+              <p class="badge badge-warn u-mb-2">Vista de administrador (demo)</p>
+              <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-2 u-p-1">
+                  <div class="form-card">
+                    <h3 class="u-mt-0">Administración de usuarios</h3>
+                    <table class="pure-table pure-table-horizontal" style="width:100%;">
+                      <thead>
+                        <tr>
+                          <th>Socio</th>
+                          <th>Plan</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Ana Martínez</td>
+                          <td>Fit Pro</td>
+                          <td><button class="pure-button pure-button-outline">Editar</button></td>
+                        </tr>
+                        <tr>
+                          <td>Carlos Pinzón</td>
+                          <td>Elite</td>
+                          <td><button class="pure-button pure-button-outline">Editar</button></td>
+                        </tr>
+                        <tr>
+                          <td>Sofía Gómez</td>
+                          <td>Básico</td>
+                          <td><button class="pure-button pure-button-outline">Editar</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2 u-p-1">
+                  <div class="form-card">
+                    <h3 class="u-mt-0">Reportes</h3>
+                    <table class="pure-table pure-table-horizontal" style="width:100%;">
+                      <tbody>
+                        <tr>
+                          <td>Socios activos</td>
+                          <td><strong>248</strong></td>
+                        </tr>
+                        <tr>
+                          <td>Clases dictadas este mes</td>
+                          <td><strong>132</strong></td>
+                        </tr>
+                        <tr>
+                          <td>Ingresos del mes</td>
+                          <td><strong>$31.200.000</strong></td>
+                        </tr>
+                        <tr>
+                          <td>Calificación promedio</td>
+                          <td><strong>4.8 / 5</strong></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <button class="pure-button pure-button-outline pure-input-1 u-mt-2">Descargar reporte PDF</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+
+
+
+
+    <footer class="gym-footer">
+      <div class="container pure-g">
+        <div class="pure-u-1 pure-u-md-1-3">
+          <h3 style="color:#fff;">IRON HOUSE</h3>
+          <p style="color:var(--bone-200);">Calle 100 # 15-20, Bogotá.</p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
+          <h4 style="color:#fff;">Enlaces</h4>
+          <p><a href="index.html">Inicio</a><br><a href="servicios.html">Servicios</a><br><a
+              href="contacto.html">Contacto</a></p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
+          <h4 style="color:#fff;">Síguenos</h4>
+          <p><a href="#">Instagram</a><br><a href="#">Facebook</a></p>
+        </div>
+      </div>
+      <p class="fine">© 2026 Iron House Gym — Proyecto académico construido con Pure.css</p>
+    </footer>
+  </div>
+
+
+
+
+  <!-- MODAL DE CONFIRMACIÓN (compartido) -->
+  <div class="modal-backdrop" id="confirm-modal">
+    <div class="modal-box">
+      <h3 data-modal-title>Confirmar acción</h3>
+      <p data-modal-body>¿Deseas continuar?</p>
+      <div class="modal-actions">
+        <button class="pure-button" data-modal-close>Volver</button>
+        <button class="pure-button pure-button-signal" data-modal-confirm>Confirmar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="recursos/script.js"></script>
+</body>
+
+</html>

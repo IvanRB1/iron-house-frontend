@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Iron House Gym</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="recursos/style.css">
+</head>
+
+<body>
+
+
+  <div class="page-wrap">
+
+    <nav class="pure-menu pure-menu-horizontal gym-nav">
+      <a href="index.html" class="pure-menu-heading">IRON <span>HOUSE</span></a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">&#9776;</button>
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">Inicio</a></li>
+        <li class="pure-menu-item"><a href="servicios.html" class="pure-menu-link">Servicios</a></li>
+        <li class="pure-menu-item pure-menu-selected"><a href="contacto.html" class="pure-menu-link">Contacto</a></li>
+        <li class="pure-menu-item"><a href="cuenta.html" class="pure-menu-link">Mi cuenta</a></li>
+      </ul>
+    </nav>
+
+
+
+
+    <div class="content">
+      <header class="hero section-tight">
+        <div class="container">
+          <p class="eyebrow">Hablemos</p>
+          <h1 style="font-size:2.4rem;">Contáctanos</h1>
+          <p class="lede">¿Tienes dudas sobre planes, horarios o quieres visitar la sede? Escríbenos y te respondemos en
+            menos de 24 horas.</p>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="container pure-g">
+
+
+
+          <!--FORMULARIO DE CONTACTO-->
+          <div class="pure-u-1 pure-u-md-7-12 u-p-1">
+            <div class="form-card">
+              <form class="pure-form pure-form-stacked" data-validate novalidate>
+                <fieldset>
+                  <legend>Formulario de contacto</legend>
+
+                  <label for="nombre">Nombre completo</label>
+                  <input id="nombre" type="text" class="pure-input-1" placeholder="Ej. Ana Martínez" required
+                    minlength="3">
+                  <span class="form-error">Ingresa tu nombre completo (mínimo 3 caracteres).</span>
+
+                  <label for="email">Correo electrónico</label>
+                  <input id="email" type="email" class="pure-input-1" placeholder="ana@correo.com" required>
+                  <span class="form-error">Ingresa un correo electrónico válido.</span>
+
+                  <label for="telefono">Teléfono</label>
+                  <input id="telefono" type="tel" class="pure-input-1" placeholder="Ej. 3001234567"
+                    pattern="[0-9]{7,10}" required>
+                  <span class="form-error">Ingresa un teléfono válido (7 a 10 dígitos).</span>
+
+                  <label for="motivo">Motivo de contacto</label>
+                  <select id="motivo" class="pure-input-1" required>
+                    <option value="">Selecciona una opción…</option>
+                    <option>Información de membresías</option>
+                    <option>Clases y horarios</option>
+                    <option>Soporte a mi cuenta</option>
+                    <option>Otro</option>
+                  </select>
+
+                  <label for="mensaje">Mensaje</label>
+                  <textarea id="mensaje" class="pure-input-1" rows="5" placeholder="Cuéntanos en qué podemos ayudarte…"
+                    required minlength="10"></textarea>
+                  <span class="form-error">Escribe un mensaje de al menos 10 caracteres.</span>
+
+                  <label for="terminos" class="pure-checkbox">
+                    <input id="terminos" type="checkbox" required> Acepto la política de tratamiento de datos
+                  </label>
+
+                  <button type="submit" class="pure-button pure-button-signal pure-input-1 u-mt-2">Enviar
+                    mensaje</button>
+
+                  <p data-form-success style="display:none; color: var(--ok-500); margin-top:1rem;">
+                    ¡Gracias! Tu mensaje fue enviado, te contactaremos pronto.
+                  </p>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+
+
+
+
+          <!--INFO DE CONTACTO-->
+          <div class="pure-u-1 pure-u-md-5-12 u-p-1">
+            <div class="form-card" style="height:100%;">
+              <h3 class="u-mt-0">Información</h3>
+              <p><strong>Dirección:</strong><br>Calle 100 # 15-20, Bogotá</p>
+              <p><strong>Teléfono:</strong><br>(601) 555-0199</p>
+              <p><strong>Horario de atención:</strong></p>
+              <table class="pure-table pure-table-horizontal" style="width:100%;">
+                <tbody>
+                  <tr>
+                    <td>Lunes a viernes</td>
+                    <td>5:00 a.m. – 10:00 p.m.</td>
+                  </tr>
+                  <tr>
+                    <td>Sábados</td>
+                    <td>7:00 a.m. – 4:00 p.m.</td>
+                  </tr>
+                  <tr>
+                    <td>Domingos</td>
+                    <td>Cerrado</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="u-mt-2"><a href="cuenta.html" class="pure-button pure-button-outline pure-input-1">Ir a mi
+                  cuenta</a></p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+
+
+    <footer class="gym-footer">
+      <div class="container pure-g">
+        <div class="pure-u-1 pure-u-md-1-3">
+          <h3 style="color:#fff;">IRON HOUSE</h3>
+          <p style="color:var(--bone-200);">Calle 100 # 15-20, Bogotá.</p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
+          <h4 style="color:#fff;">Enlaces</h4>
+          <p><a href="index.html">Inicio</a><br><a href="servicios.html">Servicios</a><br><a href="cuenta.html">Mi
+              cuenta</a></p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
+          <h4 style="color:#fff;">Síguenos</h4>
+          <p><a href="#">Instagram</a><br><a href="#">Facebook</a></p>
+        </div>
+      </div>
+      <p class="fine">© 2026 Iron House Gym — Proyecto académico construido con Pure.css</p>
+    </footer>
+  </div>
+  <script src="recursos/script.js"></script>
+</body>
+
+</html>
